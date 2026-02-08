@@ -1,0 +1,27 @@
+<?php
+session_start();
+// Si ya está logueado, redirigir al dashboard
+if (isset($_SESSION['usuario'])) {
+    header("Location: ../anterior/index.php");
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Iniciar sesión</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../comun/estilo.css">
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+        <main>
+            <h1>CRM</h1>
+            <input type="text" id="usuario" placeholder="Usuario">
+            <input type="password" id="contrasena" placeholder="contraseña">
+            <button>Iniciar sesión</button>
+            <div id="estado" style="color: red; margin-top: 9px;"></div>
+        </main>
+        <script src="comportamiento.js"></script>
+    </body>
+</html>

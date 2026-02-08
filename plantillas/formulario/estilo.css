@@ -1,0 +1,310 @@
+/* Estilos específicos para el módulo de formularios */
+.formularios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.formulario-card {
+    background: var(--erp-bg-2);
+    border: 1px solid var(--erp-border);
+    border-radius: var(--erp-radius);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.formulario-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--erp-shadow-lg);
+    border-color: var(--erp-brand);
+}
+
+.formulario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.formulario-header h4 {
+    margin: 0;
+    color: var(--erp-fg);
+    flex: 1;
+}
+
+.formulario-descripcion {
+    color: var(--erp-muted);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.formulario-meta {
+    margin-bottom: 1rem;
+}
+
+.formulario-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+/* Constructor de Formularios */
+.controles-formulario {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--erp-bg);
+    border-radius: var(--erp-radius);
+    border: 1px solid var(--erp-border);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--erp-border);
+    color: var(--erp-fg);
+}
+
+.btn-outline:hover {
+    background: var(--erp-bg);
+    border-color: var(--erp-brand);
+}
+
+.preview-formulario {
+    min-height: 200px;
+    border: 2px dashed var(--erp-border);
+    border-radius: var(--erp-radius);
+    padding: 1.5rem;
+    background: var(--erp-bg);
+}
+
+.campo-preview {
+    background: white;
+    border: 1px solid var(--erp-border);
+    border-radius: var(--erp-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+}
+
+.campo-preview:hover {
+    border-color: var(--erp-brand);
+}
+
+.campo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--erp-border);
+}
+
+.campo-tipo {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--erp-muted);
+    text-transform: uppercase;
+}
+
+.campo-acciones {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.campo-contenido {
+    padding: 0.5rem 0;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--erp-bg-2);
+    border-radius: var(--erp-radius);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--erp-shadow-lg);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--erp-border);
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--erp-fg);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+/* Estados vacíos personalizados */
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+    color: var(--erp-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .formularios-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .controles-formulario {
+        justify-content: center;
+    }
+    
+    .formulario-actions {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+}
+/* Estilos para la vista de formularios */
+.formulario-completo {
+    max-width: 100%;
+}
+
+.campo-completo {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--erp-brand);
+}
+
+.campo-completo .form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--erp-fg);
+}
+
+.campo-completo .form-control {
+    background: white;
+    border: 1px solid var(--erp-border);
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.campo-completo .form-control:focus {
+    border-color: var(--erp-brand);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    outline: none;
+}
+
+/* Modal de vista de formulario */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--erp-bg-2);
+    border-radius: var(--erp-radius);
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--erp-shadow-lg);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--erp-border);
+    background: var(--erp-bg);
+    border-radius: var(--erp-radius) var(--erp-radius) 0 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--erp-fg);
+    font-size: 1.25rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .modal-header {
+        padding: 1rem;
+    }
+    
+    .modal-body {
+        padding: 1rem;
+    }
+    
+    .campo-completo {
+        padding: 0.75rem;
+    }
+}
+
+/* Animaciones */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    animation: slideIn 0.3s ease;
+}
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.formulario-card, .campo-preview {
+    animation: fadeIn 0.3s ease;
+}
